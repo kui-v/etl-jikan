@@ -25,7 +25,7 @@ def run_jikan_anime(time_to_sleep=tts, start_loop=start, end_loop=end):
         r = requests.get(jikan_url_anime + str(i))
         if r.status_code == 200:
             print(loop_count, r.json()['title'])
-        loops = loops + 1
+        loop_count = loop_count + 1
         time.sleep(time_to_sleep)
 
 run_jikan_anime()
