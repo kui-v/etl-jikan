@@ -19,3 +19,13 @@ jikan_url_anime = 'http://34.82.195.17:8080/v3/anime/'
 
 logger.info("Starting Jikan with TTS: {0}, Start: {1}, End: {2}".format(tts, start, end))
 
+def run_jikan_anime(time_to_sleep=tts, start_loop=start, end_loop=end):
+    loop_count = 1
+    for i in range(start_loop, end_loop):
+        r = requests.get(jikan_url_anime + str(i))
+        if r.status_code == 200:
+            print(loop_count, r.json()['title'])
+        loops = loops + 1
+        time.sleep(time_to_sleep)
+
+run_jikan_anime()
