@@ -1,0 +1,126 @@
+[
+    {
+        "mode": "NULLABLE",
+        "name": "aired_from",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "aired_to",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "episodes",
+        "type": "NUMERIC"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "favorites",
+        "type": "NUMERIC"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "genres",
+        "type": "RECORD",
+        "fields": [
+            {
+                "name": "genre_id",
+                "type": "NUMERIC",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "genre_name",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            }
+        ]
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "image_url",
+        "type": "string"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "mal_id",
+        "type": "NUMERIC"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "members",
+        "type": "NUMERIC"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "popularity",
+        "type": "NUMERIC"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "rank",
+        "type": "NUMERIC"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "score",
+        "type": "NUMERIC"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "scored_by",
+        "type": "NUMERIC"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "studios",
+        "type": "RECORD",
+        "fields": [
+            {
+                "name": "studio_id",
+                "type": "NUMERIC",
+                "mode": "NULLABLE"
+            },
+            {
+                "name": "studio_name",
+                "type": "STRING",
+                "mode": "NULLABLE"
+            }
+        ]
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "source",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "synopsis",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "title",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "title_english",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "title_japanese",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "type",
+        "type": "STRING"
+    },
+    {
+        "mode": "NULLABLE",
+        "name": "url",
+        "type": "STRING"
+    }
+]
