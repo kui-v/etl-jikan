@@ -19,6 +19,9 @@ jikan_url_anime = 'http://34.82.195.17:8080/v3/anime/'
 
 logger.info("Starting Jikan with TTS: {0}, Start: {1}, End: {2}".format(tts, start, end))
 
+def date_format(string_date):
+    return string_date[0:10]
+
 def get_bulk_anime(time_to_sleep, bulk_start, bulk_end):
     loop_count = 1
     anime_list = []
@@ -27,8 +30,8 @@ def get_bulk_anime(time_to_sleep, bulk_start, bulk_end):
         if r.status_code == 200:
             ani_dict = {}
             anison = r.json()
-            ani_dict['aired_from'] = anison['aired']['from']
-            ani_dict['aired_to'] = anison['aired']['to']
+            ani_dict['aired_from'] = date_format(anison['aired']['from'])
+            ani_dict['aired_to'] = date_format(anison['aired']['to'])
             ani_dict['episodes'] = anison['episodes']
             ani_dict['favorites'] = anison['favorites']
             ani_dict['genres'] = [[{'genre_id': d['mal_id']}, {'genre_name': d['name']}] for d in anison['genres']]
@@ -58,6 +61,15 @@ def get_bulk_anime(time_to_sleep, bulk_start, bulk_end):
     # for i in range(start_loop, end_loop)
     #     if counter % 50 == 0:
 
-
-ani = get_jikan_anime()
 client = bigquery.Client()
+dataset_id = 'jikan'
+table_id = 'anime'
+table_ref = client.dataset(dataset_id).table(table_id)
+table = client.get_table(table_ref)
+
+ani = get_bulk_anime(tts, start, end)
+errors = client.insert_rows_json(table, ani)
+if errors == []:
+    logger.info("New rows have been added.")
+else:
+    logger.error("Encounted errors will inserting rows: {}".format(str(errors)))
