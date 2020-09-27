@@ -95,6 +95,7 @@ def etl_controller(time_to_sleep, start_loop, end_loop, bulk_increment):
         logger.info("Staring job {}".format(load_job.job_id))
         load_job.result()
         logger.info("Finished.")
+    anime_counter = anime_counter - 1
 
 logger.info("Starting the ETL for Jikan.")
 etl_controller(tts, start, end, increment)
