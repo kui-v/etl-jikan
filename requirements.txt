@@ -1,3 +1,2 @@
+argparse
 google-cloud-bigquery
-logging
-requests
