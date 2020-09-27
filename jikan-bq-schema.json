@@ -27,12 +27,12 @@
             {
                 "name": "genre_id",
                 "type": "NUMERIC",
-                "mode": "REPEATED"
+                "mode": "NULLABLE"
             },
             {
                 "name": "genre_name",
                 "type": "STRING",
-                "mode": "REPEATED"
+                "mode": "NULLABLE"
             }
         ]
     },
@@ -79,12 +79,12 @@
             {
                 "name": "studio_id",
                 "type": "NUMERIC",
-                "mode": "REPEATED"
+                "mode": "NULLABLE"
             },
             {
                 "name": "studio_name",
                 "type": "STRING",
-                "mode": "REPEATED"
+                "mode": "NULLABLE"
             }
         ]
     },
